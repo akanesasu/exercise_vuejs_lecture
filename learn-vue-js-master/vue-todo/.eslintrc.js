@@ -1,6 +1,10 @@
 // .eslintrc.js
-// eslint-disable-next-line no-undef
 module.exports = {
+  env: {
+    browser: true,
+    es2021: true,
+    node: true, // 추가
+  },
   // 현재 eslintrc 파일을 기준으로 ESLint 규칙을 적용
   root: true,
   // 추가적인 규칙들을 적용
@@ -20,7 +24,7 @@ module.exports = {
       // https://prettier.io/docs/en/options.html
       {
         singleQuote: true,
-        semi: true,
+        semi: false,
         useTabs: false,
         tabWidth: 2,
         trailingComma: 'all',
@@ -30,7 +34,6 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
-    // eslint-disable-next-line no-undef
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
   },
-};
+}

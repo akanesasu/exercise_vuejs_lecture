@@ -4,7 +4,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const storage = {
-  fetch () {
+  fetch() {
     const arr = []
     if (localStorage.length > 0) {
       for (let i = 0; i < localStorage.length; i++) {
@@ -12,12 +12,12 @@ const storage = {
       }
     }
     return arr
-  }
+  },
 }
 
 export const store = new Vuex.Store({
   state: {
     todoItems: storage.fetch(),
-    headerText: 'Todo It!'
-  }
+    headerText: 'Todo It!',
+  },
 })

@@ -20,23 +20,23 @@ export default {
   data: function () {
     return {
       todoItems: [],
-    };
+    }
   },
   methods: {
     removeTodo: function (todoItem, index) {
-      console.log(todoItem, index);
-      localStorage.removeItem(todoItem);
-      this.todoItems.splice(index, 1);
+      console.log(todoItem, index)
+      localStorage.removeItem(todoItem)
+      this.todoItems.splice(index, 1)
     },
   },
   created: function () {
     if (localStorage.length > 0) {
       for (let i = 0; i < localStorage.length; i++) {
-        this.todoItems.push(localStorage.key(i));
+        this.todoItems.push(localStorage.key(i))
       }
     }
   },
-};
+}
 </script>
 
 <style>
