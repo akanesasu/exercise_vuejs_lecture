@@ -18,9 +18,7 @@ export default {
   methods: {
     addTodo: function () {
       if (this.newTodoItem !== '') {
-        const obj = { completed: false, item: this.newTodoItem }
-        //저장 로직 : 개발자도구 Application
-        localStorage.setItem(this.newTodoItem, JSON.stringify(obj))
+        this.$emit('addTodoItem', this.newTodoItem)
         this.clearInput()
       }
     },
