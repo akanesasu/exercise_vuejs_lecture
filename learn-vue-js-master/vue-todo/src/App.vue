@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <TodoHeader></TodoHeader>
-    <TodoInput v-on:addTodoItem="addOneItem"></TodoInput>
-    <TodoList v-bind:propsdata="todoItems" v-on:removeItem="removeOneItem" v-on:toggleItem="toggleOneItem"></TodoList>
-    <TodoFooter v-on:clearAll="clearAllItems"></TodoFooter>
+    <TodoInput></TodoInput>
+    <TodoList></TodoList>
+    <TodoFooter></TodoFooter>
   </div>
 </template>
 
@@ -14,6 +14,7 @@ import TodoList from './components/TodoList.vue'
 import TodoFooter from './components/TodoFooter.vue'
 
 export default {
+  /* store에서 처리할 것이라 날림
   data: function () {
     return {
       todoItems: [],
@@ -25,23 +26,23 @@ export default {
       //저장 로직 : 개발자도구 Application
       localStorage.setItem(todoItem, JSON.stringify(obj))
       this.todoItems.push(obj)
-    },
+    }, 
     removeOneItem: function (todoItem, index) {
       localStorage.removeItem(todoItem.item)
       this.todoItems.splice(index, 1)
-    },
+    }, 
     toggleOneItem: function (todoItem, index) {
       // todoItem.completed = !todoItem.completed
       this.todoItems[index].completed = !this.todoItems[index].completed
       // localStorage는 update가 없어서 지우고 다시 넣어야함
       localStorage.removeItem(todoItem.item)
       localStorage.setItem(todoItem.item, JSON.stringify(todoItem))
-    },
+    }, 
     clearAllItems: function () {
       localStorage.clear()
       this.todoItems = []
-    },
-  },
+    }, 
+  }, */
   components: {
     TodoHeader,
     TodoInput,
@@ -49,14 +50,15 @@ export default {
     TodoFooter,
   },
   // TodoList에서 가져옴
-  created: function () {
+  /* store에서 처리할 것이라 날림 
+    created: function () {
     if (localStorage.length > 0) {
       for (let i = 0; i < localStorage.length; i++) {
         this.todoItems.push(JSON.parse(localStorage.getItem(localStorage.key(i))))
         // this.todoItems.push(localStorage.key(i))
       }
     }
-  },
+  }, */
 }
 </script>
 
